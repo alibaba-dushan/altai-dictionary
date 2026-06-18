@@ -1,0 +1,47 @@
+[
+  {
+    "id": "all_available",
+    "title": "Все доступные словари",
+    "kind": "collection",
+    "direction": "mixed",
+    "primary": false,
+    "sources": [
+      "altai_russian_2018",
+      "russian_altai_2015_tom1_a_o",
+      "russian_altai_2016_tom2_p_ya",
+      "altai_ethnographic_2023"
+    ]
+  },
+  {
+    "id": "altai_russian_2018",
+    "title": "Алтайско-русский словарь, 2018",
+    "filename": "altai_russian_dictionary_2018.json",
+    "kind": "bilingual",
+    "direction": "altai-ru",
+    "primary": true
+  },
+  {
+    "id": "russian_altai_2015_tom1_a_o",
+    "title": "Русско-алтайский словарь, Том I А–О, 2015",
+    "filename": "russian_altai_dictionary_2015_tom1_a_o.json",
+    "kind": "bilingual",
+    "direction": "ru-altai",
+    "primary": false
+  },
+  {
+    "id": "russian_altai_2016_tom2_p_ya",
+    "title": "Русско-алтайский словарь, Том II П–Я, 2016",
+    "filename": "russian_altai_dictionary_2016_tom2_p_ya.json",
+    "kind": "bilingual",
+    "direction": "ru-altai",
+    "primary": false
+  },
+  {
+    "id": "altai_ethnographic_2023",
+    "title": "Алтайский этнографический словарь, 2023",
+    "filename": "altai_ethnographic_dictionary_2023.json",
+    "kind": "ethnographic",
+    "direction": "altai-ru-definition",
+    "primary": false
+  }
+]

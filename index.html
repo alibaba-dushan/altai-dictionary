@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Алтайский словарь</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="styles.css?v=2026-06-18-structured" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero__inner">
+        <h1>Алтайский словарь</h1>
+        <p class="hero__text">Поиск по слову и по переводу — с учётом чередования гласных и русских синонимов.</p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel search-panel" aria-label="Поиск">
+        <div class="search-box">
+          <input id="queryInput" type="search" autocomplete="off" spellcheck="false"
+                 placeholder="Введите алтайское или русское слово…" />
+        </div>
+
+        <div class="controls">
+          <div class="mode-row" role="radiogroup" aria-label="Где искать">
+            <label><input type="radio" name="mode" value="word" checked /> <span>по слову</span></label>
+            <label><input type="radio" name="mode" value="translation" /> <span>по переводу</span></label>
+            <label><input type="radio" name="mode" value="full" /> <span>везде</span></label>
+          </div>
+
+          <label class="field field--source">
+            <span>Словарь</span>
+            <select id="sourceSelect"></select>
+          </label>
+        </div>
+
+        <div class="options-row">
+          <label><input id="alternationToggle" type="checkbox" checked /> <span>чередования</span></label>
+          <label><input id="synonymToggle" type="checkbox" /> <span>синонимы</span></label>
+          <label><input id="regexToggle" type="checkbox" /> <span>регулярное выражение</span></label>
+        </div>
+
+        <details class="help">
+          <summary>Как искать</summary>
+          <div class="help__content">
+            <p><b>Чередования.</b> Поиск понимает, что гласные могут чередоваться: запрос <code>гар</code> найдёт и <code>гор</code>. Группы — <code>а·е·о·ӧ</code>, <code>ы·и</code>, <code>у·ӱ</code>, а также согласные <code>г·к</code> и <code>л·н·д·т</code> (последние две не чередуются в начале слова).</p>
+            <p><b>Синонимы.</b> Поиск по переводу можно расширить близкими по смыслу словами: запрос <code>кидать</code> найдёт и статьи с переводом <code>бросать</code>.</p>
+            <p><b>Регулярные выражения.</b> Можно искать по шаблону: <code>^аай</code>, <code>к[ао]л</code>, <code>.*чы$</code>.</p>
+          </div>
+        </details>
+
+        <nav id="alphabetStrip" class="alphabet-strip" aria-label="Алфавитный указатель"></nav>
+      </section>
+
+      <section class="toolbar" aria-live="polite">
+        <div id="status" class="status">Открываем словарь…</div>
+        <div id="synonymHint" class="synonym-hint" hidden></div>
+        <label class="limit-control">Показывать
+          <select id="limitSelect">
+            <option value="50">50</option>
+            <option value="100" selected>100</option>
+            <option value="200">200</option>
+            <option value="500">500</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="book-stage" aria-label="Статьи словаря">
+        <div class="book-page">
+          <span id="bookCaption" hidden></span>
+          <span id="bookSource" hidden></span>
+          <section id="results" class="results" aria-label="Результаты"></section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Источники: Алтайско-русский словарь (2018), Русско-алтайский словарь в двух томах (2015, 2016) и Алтайский этнографический словарь (2023).</p>
+    </footer>
+  </div>
+
+  <script src="app.js?v=2026-06-18-structured"></script>
+</body>
+</html>
